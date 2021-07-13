@@ -5,7 +5,7 @@
 
 body {
   height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -20,10 +20,14 @@ body {
   margin: 1rem;
 }
 
+.note-container {
+  margin: 0 auto;
+}
+
 .note-title {
   padding: 0.5rem 1rem;
 }
 
-.note-content, .submit {
+/* .note-content, .submit {
   display: none;
-}
+} */

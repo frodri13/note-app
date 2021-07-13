@@ -1,4 +1,6 @@
 {
   "emmet.showSuggestionsAsSnippets": true,
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
 }

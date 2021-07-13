@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script src="/lib/sara.js"></script>
-    <script src="src/note.js"></script>
-    <script src="test/note-test.js"></script>
-  </body>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Notepad</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="header" class="main-header">Notepad</h1>
+
+    <div class="note-container">
+      <h3 id="note-title" class="note-title">Title</h3>
+      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
+      <br>
+      <button id="submit" class="submit button">Submit</button>
+    </div>
+
+    <div class="note-container">
+      <h3 id="note-title" class="note-title">Title</h3>
+      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
+      <br>
+      <button id="submit" class="submit button">Submit</button>
+    </div>
+
+    <div class="note-container">
+      <h3 id="note-title" class="note-title">Title</h3>
+      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
+      <br>
+      <button id="submit" class="submit button">Submit</button>
+    </div>
+
+    <button id="new-note" class="button">Create A New Note</button>
+  </div>
+
+  <script src="src/interface.js"></script>
+  <script src="src/note.js"></script>
+</body>
 </html>

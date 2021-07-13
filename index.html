@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="css/style.css">
-  <title>Notepad</title>
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Notepad</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="header" class="main-header">Notepad</h1>
 
-  <div class="container">
-    <h1 id="header" class="main-header">Notepad</h1>
+      <div class="note-container">
+        <button id="new-note" class="new-note button">Create A New Note</button>
+      </div>
 
-    <div class="note-container">
-      <h3 id="note-title" class="note-title">Title</h3>
-      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
-      <br>
-      <button id="submit" class="submit button">Submit</button>
+      <div class="note-container">
+        <h3 id="note-title" class="note-title">Title</h3>
+        <textarea
+          id="note-content"
+          class="note-content"
+          cols="30"
+          rows="10"
+          placeholder="Write a note"
+        ></textarea>
+        <br />
+        <button id="submit" class="submit button">Submit</button>
+      </div>
+       
     </div>
-
-    <div class="note-container">
-      <h3 id="note-title" class="note-title">Title</h3>
-      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
-      <br>
-      <button id="submit" class="submit button">Submit</button>
-    </div>
-
-    <div class="note-container">
-      <h3 id="note-title" class="note-title">Title</h3>
-      <textarea id="note-content" class="note-content" cols="30" rows="10" placeholder="Write a note"></textarea>
-      <br>
-      <button id="submit" class="submit button">Submit</button>
-    </div>
-
-    <div class="note-container">
-      <button id="new-note" class="new-note button">Create A New Note</button>
-    </div>
-    
   </div>
 
   <script src="src/interface.js"></script>

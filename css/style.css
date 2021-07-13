@@ -4,7 +4,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -20,10 +20,27 @@ body {
   margin: 1rem;
 }
 
+.note-container {
+  margin: 0 auto;
+}
+
 .note-title {
   padding: 0.5rem 1rem;
 }
 
-.note-content, .submit {
+ /* .note-content, .submit {
   display: none;
+} */
+
+.button {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.button:hover, .note-title:hover {
+  cursor: pointer;
 }

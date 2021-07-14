@@ -8,4 +8,7 @@ class Notes {
   title(text) {
     return text.slice(0, 20);
   }
+  list() {
+    return this.list;
+  }
 }

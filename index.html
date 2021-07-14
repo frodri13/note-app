@@ -5,28 +5,36 @@
     <title>Notepad</title>
   </head>
   <body>
-    <div class="container">
-      <h1 id="header" class="main-header">Notepad</h1>
-
-      <div class="note-container">
+      
+      <!-- <div class="note-container">
         <button id="new-note" class="new-note button">Create A New Note</button>
-      </div>
-
+      </div> -->
+      
       <div class="note-container">
-        <h3 id="note-title" class="note-title">Title</h3>
-        <textarea
-          id="note-content"
-          class="note-content"
-          cols="30"
-          rows="10"
-          placeholder="Write a note"
-        ></textarea>
-        <br />
-        <button id="submit" class="submit button">Submit</button>
+        <h1 id="header" class="main-header">Notepad</h1>
+        <br>
+
+        <div class="input-field">
+          <input id="note-content" class="note-input" placeholder="Write a note"></input>
+          <button id="submit" class="submit button">Submit</button>
+        </div>
+
+        <div class="notes-list">
+          <h4 id="note-title" class="note-title">Note title</h4>
+          <!-- <button id="submit" class="clear-all button">Clear</button> -->
+          <h4 id="note-title" class="note-title">This only contains t...</h4>
+          <!-- <button id="submit" class="clear button">Clear</button> -->
+          <h4 id="note-title" class="note-title">This only contains t...</h4>
+          <!-- <button id="submit" class="clear button">Clear</button> -->
+          <h4 id="note-title" class="note-title">This only contains t...</h4>
+          <!-- <button id="submit" class="clear button">Clear</button> -->
+        </div>
+
+        <br>
+        <button id="submit" class="clear-all button">Clear All</button>
       </div>
        
     </div>
-  </div>
 
   <script src="src/interface.js"></script>
   <script src="src/note.js"></script>

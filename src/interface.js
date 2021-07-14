@@ -1,13 +1,15 @@
-const title = document.querySelector("#note-title");
+const title = document.querySelectorAll(".note-title");
 const content = document.querySelector("#note-content");
 const submitButton = document.querySelector("#submit");
 const newNote = document.querySelector("#new-note");
 
 title.addEventListener("click", () => {
+  // logic for when content is visible and logic for when it's hidden needed
   content.style = "display: inline-block;";
   submitButton.style = "display: inline-block;";
 });
 
+document.querySelectorAll
 // After clicking newNote a new div element will be added to the DOM
 // It will have a title, textarea and submit button
 

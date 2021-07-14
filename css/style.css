@@ -62,6 +62,14 @@ body {
   text-align: left;
 }
 
+.note-content {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 93%;
+  border: 1px solid #ccc;
+}
+
 .button {
   display: inline-block;
   padding: 1rem;

@@ -53,13 +53,21 @@ body {
   margin-bottom: 10px;
 }
 
- /* .note-content, #submit {
+ .note-content {
   display: none;
-} */
+}
 
 .notes-list {
   width: 100%;
   text-align: left;
+}
+
+.note-content {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 93%;
+  border: 1px solid #ccc;
 }
 
 .button {

@@ -4,9 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.querySelector("#submit");
   const titles = document.querySelectorAll(".note-title");
   const noteContent = document.querySelectorAll(".note-content");
+  const clearAllButton = document.querySelector("#clear");
+  const notesList = document.querySelector(".notes-list");
 
+  getNotes();
   // Shows/hides the note content when clicking title
-  titles.forEach(function(title, index) {
+  titles.forEach(function (title, index) {
     title.addEventListener("click", () => {
       noteContent[index].classList.toggle("hide");
     });
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     notes.create(input.value);
-    const notesList = document.querySelector(".notes-list");
+    // const notesList = document.querySelector(".notes-list");
 
     let newTitle = document.createElement("h4");
     newTitle.classList.add("note-title");
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     noteBody.classList.add("hide");
     noteBody.value = input.value;
     notesList.appendChild(noteBody);
+    saveNotes(input.value);
 
     input.value = "";
 
@@ -43,4 +47,61 @@ document.addEventListener("DOMContentLoaded", () => {
       noteBody.classList.toggle("hide");
     });
   });
+
+  function saveNotes(note) {
+    let notes;
+    if (localStorage.getItem("saved-notes") === null) {
+      notes = [];
+    } else {
+      notes = JSON.parse(localStorage.getItem("saved-notes"));
+    }
+    notes.push(note);
+    localStorage.setItem("saved-notes", JSON.stringify(notes));
+  }
+
+  function getNotes() {
+    let savedNotes;
+    if (localStorage.getItem("saved-notes") === null) {
+      savedNotes = [];
+    } else {
+      savedNotes = JSON.parse(localStorage.getItem("saved-notes"));
+    }
+
+    savedNotes.forEach(function (note) {
+      const notes = new Notes();
+      notes.create(note);
+
+      // const notesList = document.querySelector(".notes-list");
+
+      let newTitle = document.createElement("h4");
+      newTitle.classList.add("note-title");
+      if (notes.title(note).length >= 20) {
+        newTitle.innerText = `${notes.title(note)}...`;
+      } else {
+        newTitle.innerText = `${notes.title(note)}`;
+      }
+      notesList.appendChild(newTitle);
+
+      let noteBody = document.createElement("input");
+      noteBody.classList.add("note-content");
+      noteBody.value = note;
+      notesList.appendChild(noteBody);
+
+      newTitle.addEventListener("click", () => {
+        noteBody.classList.toggle("hide");
+      });
+    });
+  }
+
+  function clearAll() {
+    localStorage.clear();
+    while (notesList.firstChild) {
+      notesList.removeChild(notesList.firstChild);
+    }
+
+    // removeChild(document.querySelectorAll("h4"));
+    // notesList.removeChild();
+  }
+
+  clearAllButton.addEventListener("click", clearAll);
 });

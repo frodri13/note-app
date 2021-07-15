@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // After clicking newNote a new div element will be added to the DOM
   // It will have a title, textarea and submit button
+
   submitButton.addEventListener("click", () => {
     if (input.value === "") {
       return;

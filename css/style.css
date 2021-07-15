@@ -53,10 +53,6 @@ body {
   margin-bottom: 10px;
 }
 
- .note-content {
-  display: none;
-}
-
 .notes-list {
   width: 100%;
   text-align: left;
@@ -78,6 +74,7 @@ body {
   background: rgb(139, 110, 207);
   color: #fff;
   font-weight: 600;
+  transition: ease-in 300ms;
 }
 
 .button:hover, .note-title:hover {
@@ -86,4 +83,8 @@ body {
 
 .button:hover {
   background: rgb(115, 65, 230);
+}
+
+.hide {
+  display: none;
 }

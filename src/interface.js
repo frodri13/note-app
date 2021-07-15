@@ -1,15 +1,27 @@
-const input = document.querySelector("#note-input");
-const submitButton = document.querySelector("#submit");
-const title = document.querySelectorAll(".note-title");
-const noteContent = document.querySelectorAll(".note-content");
-// const notes;
 document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector("#note-input");
+  const submitButton = document.querySelector("#submit");
+  const titles = document.querySelectorAll(".note-title");
+  const noteContent = document.querySelectorAll(".note-content");
   const notes = new Notes();
 
-  // title.addEventListener("click", () => {
-  //   // logic for when content is visible and logic for when it's hidden needed
-  //   noteContent.style = "display: inline-block;";
-  // });
+  console.log(titles);
+  console.log(noteContent);
+
+  titles.forEach(function(title) {
+    console.log(title);
+    // console.log(titles.indexOf(title));
+    // trying to hide the input when clicking the title
+    let i = 0;
+    title.addEventListener("click", () => {
+      console.log(title);
+      // logic for when content is visible and logic for when it's hidden needed
+      title.style = "background: red;";
+      // noteContent.style = "background: red;";
+      noteContent[i].style.display = "inline-block";
+    });
+    i++;
+  });
 
   // After clicking newNote a new div element will be added to the DOM
   // It will have a title, textarea and submit button
@@ -23,7 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let newTitle = document.createElement("h4");
     newTitle.classList.add("note-title");
-    newTitle.innerText = `${notes.title(input.value)}...`;
+    if (notes.title(input.value).length >= 20) {
+      newTitle.innerText = `${notes.title(input.value)}...`;
+    } else {
+      newTitle.innerText = `${notes.title(input.value)}`;
+    }
     notesList.appendChild(newTitle);
 
     let noteBody = document.createElement("input");

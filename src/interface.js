@@ -4,16 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.querySelector("#submit");
   const titles = document.querySelectorAll(".note-title");
   const noteContent = document.querySelectorAll(".note-content");
-  const clearAllButton = document.querySelector("#clear");
+  const clearAllButton = document.querySelector("#clear-all");
   const notesList = document.querySelector(".notes-list");
 
   getNotes();
+
   // Shows/hides the note content when clicking title
-  titles.forEach(function (title, index) {
-    title.addEventListener("click", () => {
-      noteContent[index].classList.toggle("hide");
-    });
-  });
+  // titles.forEach(function (title, index) {
+  //   title.addEventListener("click", () => {
+  //     noteContent[index].classList.toggle("hide");
+  //   });
+  // });
 
   // After clicking newNote a new div element will be added to the DOM
   // It will have a title, textarea and submit button
@@ -33,6 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       newTitle.innerText = `${notes.title(input.value)}`;
     }
     notesList.appendChild(newTitle);
+
+    let clearButton = document.createElement("button");
+    clearButton.classList.add("clear");
+    clearButton.classList.add("button");
+    clearButton.innerText = "Clear";
+    notesList.appendChild(clearButton);
 
     let noteBody = document.createElement("input");
     noteBody.classList.add("note-content");
@@ -82,25 +89,50 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       notesList.appendChild(newTitle);
 
+      let clearButton = document.createElement("button");
+      clearButton.classList.add("clear");
+      clearButton.classList.add("button");
+      clearButton.innerText = "Clear";
+      notesList.appendChild(clearButton);
+
       let noteBody = document.createElement("input");
       noteBody.classList.add("note-content");
+      noteBody.classList.add("hide");
       noteBody.value = note;
       notesList.appendChild(noteBody);
 
       newTitle.addEventListener("click", () => {
         noteBody.classList.toggle("hide");
       });
+
+      clearButton.addEventListener("click", () => {
+        console.log(newTitle);
+        console.log(noteBody);
+        console.log(note);
+        localStorage.removeItem("note");
+        // localStorage.removeItem("saved-notes");
+        // notesList.removeChild(notesList.newTitle);
+        // notesList.removeChild(notesList.noteBody);
+      });
     });
   }
+
+  const clearItems = document.querySelectorAll(".clear");
+  console.log(clearItems);
+  clearItems.forEach(function (button, index) {
+    button.addEventListener("click", () => {
+      console.log(`button ${index} clicked`);
+      console.log(`title ${titles[index]}`)
+      localStorage.removeItem(titles[index]);
+      localStorage.removeItem(noteContent[index]);
+    });
+  });
 
   function clearAll() {
     localStorage.clear();
     while (notesList.firstChild) {
       notesList.removeChild(notesList.firstChild);
     }
-
-    // removeChild(document.querySelectorAll("h4"));
-    // notesList.removeChild();
   }
 
   clearAllButton.addEventListener("click", clearAll);

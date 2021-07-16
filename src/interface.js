@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   const clearItems = document.querySelectorAll(".clear");
   console.log(clearItems);
   clearItems.forEach(function (button, index) {
@@ -127,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem(noteContent[index]);
     });
   });
+
 
   function clearAll() {
     localStorage.clear();

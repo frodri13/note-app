@@ -53,6 +53,11 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
   width: 75%;
+  transition: ease-in 200ms;
+}
+
+.note-title:hover {
+  background: #d9d9d9;
 }
 
 .clear {
@@ -64,7 +69,7 @@ body {
   width: 100%;
   text-align: left;
   max-height: 300px;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .note-content {
@@ -83,7 +88,7 @@ body {
   background: rgb(139, 110, 207);
   color: #fff;
   font-weight: 600;
-  transition: ease-in 300ms;
+  transition: ease-in 200ms;
 }
 
 .button:hover, .note-title:hover {

@@ -41,9 +41,20 @@ const secondTest = () => {
   };
 }
 
+const thirdTest = () => {
+  if(note.list('Test Note') === ('Test Note')) {
+    second.innerText = 'Display Note Test ----> Passed'
+  } else {
+    second.innerText = 'Display Note Test ----> Failed'
+  };
+}
+
 
 const first = document.getElementById("first-test")
 const second = document.getElementById("second-test")
+const third = document.getElementById("third-test")
+
 first.addEventListener("click", firstTest)
 second.addEventListener("click", secondTest)
+third.addEventListener("click", thirdTest)
 

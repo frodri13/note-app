@@ -23,6 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (input.value === "") {
       return;
     }
+    // emoji api here - returns the emoji stored into a variable and pass that into title/body
+    console.log(input.value);
+
+    function getPostData() {
+      return fetch("https://makers-emojify.herokuapp.com/").then(response =>{ 
+        return response.json();
+      });
+    }
+
     notes.create(input.value);
     // const notesList = document.querySelector(".notes-list");
 
@@ -105,15 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
         noteBody.classList.toggle("hide");
       });
 
-      clearButton.addEventListener("click", () => {
-        console.log(newTitle);
-        console.log(noteBody);
-        console.log(note);
-        localStorage.removeItem("note");
-        // localStorage.removeItem("saved-notes");
-        // notesList.removeChild(notesList.newTitle);
-        // notesList.removeChild(notesList.noteBody);
-      });
+      // clearButton.addEventListener("click", () => {
+      //   let key = localStorage.key(0);
+      //   console.log(key[0]);
+      //   localStorage.removeItem("note");
+      //   localStorage.removeItem("newTitle");
+      //   // localStorage.removeItem("saved-notes");
+      //   // notesList.removeChild(notesList.newTitle);
+      //   // notesList.removeChild(notesList.noteBody);
+      // });
     });
   }
 

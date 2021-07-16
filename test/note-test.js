@@ -41,6 +41,7 @@ const secondTest = () => {
   };
 }
 
+
 const first = document.getElementById("first-test")
 const second = document.getElementById("second-test")
 first.addEventListener("click", firstTest)

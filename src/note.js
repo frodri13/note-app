@@ -14,3 +14,18 @@ class Notes {
     return this.list;
   }
 }
+
+
+
+// const firstTest = () => {
+//   const note = new Notes('Test');
+//   if(note.title('Test Note') === ('Test Note')) {
+//     element.innerText = 'Create Note Test ----> Passed'
+//   } else {
+//     element.innerText = 'Create Note Test ----> Failed'
+//   };
+// }
+
+
+// const element = document.getElementById("first-test")
+// element.addEventListener("click", firstTest)

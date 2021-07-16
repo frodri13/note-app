@@ -5,18 +5,19 @@
 
 body {
   display: block;
-  height: 100vh;
-  padding: 0 50px;
+  height: 73vh;
+  padding: 120px 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(rgb(60, 200, 225), rgb(110, 110, 255));
 }
 
 .note-container {
-  margin: 120px auto;
+  margin: 0 auto;
   text-align: center;
   padding: 2rem ;
   width: 100%;
   max-width: 500px;
+  max-height: 100vh;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0px 10px 15px rgb(0, 0, 0, 0.2);
@@ -37,7 +38,6 @@ body {
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /* margin-bottom: 20px; */
 }
 
 .submit {
@@ -46,16 +46,25 @@ body {
 }
 
 .note-title {
+  display: inline-block;
   font-weight: 200;
   padding: 1rem;
   background: #e1e1e1;
   border-radius: 5px;
   margin-bottom: 10px;
+  width: 75%;
+}
+
+.clear {
+  width: 15.5%;
+  margin-left: 10px;
 }
 
 .notes-list {
   width: 100%;
   text-align: left;
+  max-height: 300px;
+  overflow: auto;
 }
 
 .note-content {

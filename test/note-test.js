@@ -23,19 +23,26 @@
 //       checkIf(notes.list[0].content).is("bye");
 //     });
 // });
-const note = new Notes('Test');
+const note = new Notes();
 
 const firstTest = () => {
   if(note.title('Test Note') === ('Test Note')) {
-    element.innerText = 'Create Note Test ----> Passed'
+    first.innerText = 'Create Note Test ----> Passed'
   } else {
-    element.innerText = 'Create Note Test ----> Failed'
+    first.innerText = 'Create Note Test ----> Failed'
   };
 }
 
 const secondTest = () => {
+  if(note.title('Lorem ipsum dolor sit amet, consectetur adipis') === ('Lorem ipsum dolor sit')) {
+    second.innerText = 'Reduce note test ----> Passed'
+  } else {
+    second.innerText = 'Reduce note test ----> Failed'
+  };
 }
 
-const element = document.getElementById("first-test")
-element.addEventListener("click", firstTest)
+const first = document.getElementById("first-test")
+const second = document.getElementById("second-test")
+first.addEventListener("click", firstTest)
+second.addEventListener("click", secondTest)
 

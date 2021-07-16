@@ -93,14 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+ 
+
   function clearAll() {
     localStorage.clear();
     while (notesList.firstChild) {
       notesList.removeChild(notesList.firstChild);
     }
-
-    // removeChild(document.querySelectorAll("h4"));
-    // notesList.removeChild();
   }
 
   clearAllButton.addEventListener("click", clearAll);
